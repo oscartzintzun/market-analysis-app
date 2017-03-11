@@ -1,4 +1,4 @@
-var productImages = ['bag', 'banana', 'boots', 'chair', 'cthulhu', 'dragon', 'pen', 'scissors', 'shark', 'sweep', 'unicorn', 'usb', 'water-can', 'wine-glass'];
+var productImages = ['bag', 'banana', 'boots', 'chair', 'cthulhu', 'dragon', 'pen', 'scissors', 'shark', 'sweep', 'unicorn', 'usb', 'watercan', 'wineglass'];
 
 
 var productArray = [];
@@ -179,3 +179,25 @@ function drawChart() {
     data: data,
   });
 };
+
+window.onload = function () {
+  var chart = new CanvasJS.Chart("partners", {
+    title:{
+      text: "My First Chart in CanvasJS"
+    },
+    data: [
+      {
+        // Change type to "doughnut", "line", "splineArea", etc.
+        type: "column",
+        dataPoints: [
+          { label: "apple",  y: 10  },
+          { label: "orange", y: 15  },
+          { label: "banana", y: 25  },
+          { label: "mango",  y: 30  },
+          { label: "grape",  y: 28  }
+        ]
+      }
+    ]
+  });
+  chart.render();
+}
