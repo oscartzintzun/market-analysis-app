@@ -1,26 +1,51 @@
 <!DOCTYPE html>
-<html lang="en">
-  <head>
-  <meta charset="UTF-8">
-  <title>Vote tracker</title>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>Bus Mall</title>
   <link rel="stylesheet" href="style.css">
-  </head>
-    <h1>Choose an image that resonates with you.</h1>
-    <body>
-      <section id="images-container"></section>
-      <script type="text/javascript" src="app.js"></script>
-        <table align="center" id="tableID" border="1" style="cursor: pointer;">
-<br>
-<br>
-          <tr>
-            <td>Image 1</td>
-            <td>Image 2</td>
-            <td>Image 3</td>
-          </tr>
-          <tr>
-            <td></td>
-            <td></td>
-            <td></td>
-          </tr>
-    </body>
+
+</head>
+
+<body>
+  <header>
+    <div class="headtitle">
+    <nav>
+      <span style="text-align: center"><h1>bus mall marketing</h1></span></br>
+    </nav>
+      <section class="main-nav">
+
+      </section>
+    </div>
+  </header>
+
+  <main>
+    <section id="picHolder" class="flex-container">
+      <aside id="aftermath">
+        <button class="button" id="dispResults">Display Results</button>
+      </aside>
+      <img id="picOne" class="pic">
+      <img id="picTwo" class="pic">
+      <img id="picThree" class="pic">
+    </section>
+    <section>
+      <div class="thanks">
+        <p id="showMe" style="color: cyan">Thanks for taking our survey!</p>
+
+      </div>
+    </section>
+    <section>
+      <p style="color: cyan">Remever, we arne't an airline organization so our food isn't actually that bad.</p>
+    </section>
+    <section>
+      <div class="list">
+        <canvas id="myChart" width="300" height="300"></canvas>
+      </div>
+    </section>
+  </main>
+  <script type="text/javascript" src="app.js"></script>
+  <!-- <script type="text/javascript" src="chart.js"></script> -->
+</body>
+
 </html>

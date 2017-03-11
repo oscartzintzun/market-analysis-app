@@ -1,11 +1,91 @@
-h1 {
-  text-align: center;
-}
-section {
-  display: flex;
-  justify-content: space-around;
+body {
+  /*text-align: left;*/
+  font-family: sans-serif;
+  color: black;
+  background: #FF3366;
 }
 
-img {
-  height: 300px;
+h1 {
+  color: cyan;
 }
+nav {
+  border: solid cyan;
+}
+
+.flex-container {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+  align-items: center;
+
+}
+
+.pic {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+}
+
+.pic img {
+  height: 300px;
+  width: 300px;
+  margin-top: 80px;
+  border: solid black 5px;
+}
+
+.picTwo {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+}
+
+.picTwo img {
+  height: 300px;
+  width: 300px;
+  margin-top: 80px;
+  border: solid black 5px;
+}
+
+.picThree {
+  display: flex;
+  height: 300px;
+  width: 300px;
+  margin: auto;
+}
+
+.picThree img {
+  height: 300px;
+  width: 300px;
+  margin-top: 80px;
+  border: solid black 5px;
+}
+
+.data {
+  float: left;
+  width: 30%;
+  padding: 8px 8px 0 0;
+  color: white;
+}
+
+.buttondiv {
+  text-align: center;
+}
+
+.list {
+  width: 300;
+  height: 300;
+}
+
+aside {
+  float: left;
+  width: 20%;
+  padding: 8px 8px 0 0;
+  color: black;
+
+  .thanks {
+    text-align: center;
+  }
