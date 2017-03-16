@@ -4,9 +4,9 @@ var productImages = ['bag', 'banana', 'boots', 'chair', 'cthulhu', 'dragon', 'pe
 var productArray = [];
 
 function Product(name, path) {
-  this.name = name;
+  this.label = name;
   this.path = path;
-  this.votes = 0;
+  this.y = 0;
   // this.timesShown = 0;
   productArray.push(this);
 };
@@ -57,9 +57,9 @@ var tracker = {
     this.picTwoEl.src = this.pic2.path;
     this.picThreeEl.src = this.pic3.path;
 
-    this.picOneEl.id = this.pic1.name;
-    this.picTwoEl.id = this.pic2.name;
-    this.picThreeEl.id = this.pic3.name;
+    this.picOneEl.id = this.pic1.label;
+    this.picTwoEl.id = this.pic2.label;
+    this.picThreeEl.id = this.pic3.label;
 
   },
 
@@ -80,7 +80,7 @@ var tracker = {
   handleClick: function(event) {
     // tracker.maxClicks();
     if (
-      event.target.id === tracker.pic1.name || event.target.id === tracker.pic2.name || event.target.id === tracker.pic3.name
+      event.target.id === tracker.pic1.label || event.target.id === tracker.pic2.label || event.target.id === tracker.pic3.label
     ) {
       console.log('Click picked!');
       tracker.totalClicks++;
@@ -98,7 +98,7 @@ var tracker = {
 
     for (var i in productArray) {
       var liEl = document.createElement('li');
-      liEl.textContent = productArray[i].name + ': ' + productArray[i].votes;
+      liEl.textContent = productArray[i].label + ': ' + productArray[i].y;
       ulEl.appendChild(liEl);
     }
 
@@ -107,14 +107,14 @@ var tracker = {
 
   //counts time pics are selected
   countVotes: function() {
-    if (event.target.id === tracker.pic1.name) {
-      tracker.pic1.votes++;
+    if (event.target.id === tracker.pic1.label) {
+      tracker.pic1.y++;
     }
-    if (event.target.id === tracker.pic2.name) {
-      tracker.pic2.votes++;
+    if (event.target.id === tracker.pic2.label) {
+      tracker.pic2.y++;
     }
-    if (event.target.id === tracker.pic3.name) {
-      tracker.pic3.votes++;
+    if (event.target.id === tracker.pic3.label) {
+      tracker.pic3.y++;
     }
     console.log('pic picked was ' + event.target.id);
     tracker.displayPics();
@@ -124,7 +124,7 @@ var tracker = {
 
 function collectData() {
   for (var i = 0; i < productArray.length; i++) {
-    tracker.counter.push(productArray[i].votes);
+    tracker.counter.push(productArray[i].y);
   }
 };
 
@@ -189,13 +189,7 @@ window.onload = function () {
       {
         // Change type to "doughnut", "line", "splineArea", etc.
         type: "column",
-        dataPoints: [
-          { label: "apple",  y: 10  },
-          { label: "orange", y: 15  },
-          { label: "banana", y: 25  },
-          { label: "mango",  y: 30  },
-          { label: "grape",  y: 28  }
-        ]
+        dataPoints: productArray
       }
     ]
   });
